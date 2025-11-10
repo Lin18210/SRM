@@ -1,6 +1,5 @@
 import jwt from 'jsonwebtoken';
 import pool from '../config/db.js';
-import { use } from 'react';
 
 export const protect = async (req, res, next) => {
     try {
