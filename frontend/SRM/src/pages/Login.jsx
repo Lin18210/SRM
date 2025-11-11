@@ -1,11 +1,21 @@
 import React from 'react'
 
-export default function Login() {
+const Login = () => {
+
+    const [form, setForm] = useState({
+        email : "",
+        password : "",
+    })
+    const [error, setError] = useState("")
+
   return (
-    <View>
-      <Text>Login</Text>
-    </View>
+    <div>
+        <form>
+            <h2>Login</h2>
+            <input type="email" placeholder='email'/>
+        </form>
+    </div>
   )
 }
 
-const styles = StyleSheet.create({})
+export default Login
