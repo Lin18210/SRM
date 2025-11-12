@@ -10,7 +10,7 @@ const cookieOptions = {
   httpOnly: true,
   secure: process.env.NODE_ENV === "production",
   sameSite: "Strict",
-  maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
+  maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days if my math is correct lol
 };
 
 const generateToken = (id) => {
@@ -30,9 +30,13 @@ router.post("/register", async (req, res) => {
       .json({ message: "Please provide all required fields" });
   }
 
-  const userExists = await pool.query("SELECT * FROM users WHERE email = $1", [
-    email,
-  ]);
+  // Normalize email to be case-insensitive
+  const normalizedEmail = email.trim().toLowerCase();
+
+  const userExists = await pool.query(
+    "SELECT * FROM users WHERE LOWER(email) = LOWER($1)",
+    [normalizedEmail]
+  );
 
   if (userExists.rows.length > 0) {
     return res.status(400).json({ message: "User already exists" });
@@ -42,7 +46,7 @@ router.post("/register", async (req, res) => {
 
   const newUser = await pool.query(
     "INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING id, name, email",
-    [name, email, hashedPassword]
+    [name, normalizedEmail, hashedPassword]
   );
 
   const token = generateToken(newUser.rows[0].id);
@@ -61,9 +65,11 @@ router.post("/login", async (req, res) => {
       .json({ message: "Please provide all required fields" });
   }
 
-  const user = await pool.query("SELECT * FROM users WHERE email = $1", [
-    email,
-  ]);
+  // Case-insensitive email match
+  const user = await pool.query(
+    "SELECT * FROM users WHERE LOWER(email) = LOWER($1)",
+    [email.trim()]
+  );
 
   if (user.rows.length === 0) {
     return res.status(400).json({ message: "Invalid credentials" });
