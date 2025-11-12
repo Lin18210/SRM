@@ -13,8 +13,8 @@ const Login = ({ setUser }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", form);
-      setUser(res.data);
+      const res = await axios.post("/api/auth/login", form);
+      setUser(res.data.user);
       navigate("/");
     } catch (err) {
       setError("Invalid email or password");
