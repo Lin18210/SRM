@@ -22,14 +22,24 @@ const Home = ({error, user}) => {
     </div>
   </section>
 
-    <div className="min-h-screen w-full">
-      <ManualSlider />
-    </div>
+      <div className="w-full">
+        <ManualSlider />
+      </div>
 
-    <div>
-      <ContactForm />
+    <section className="bg-[#fbf6ec] w-full rounded-b-3xl py-16 px-4 mt-0">
+    <div className="max-w-6xl mx-auto text-center">
+      <h1 className="font-serif text-5xl md:text-5xl text-[#000000] tracking-widest uppercase">
+        Our Valued Partners
+      </h1>
+      <p className="mt-8 text-base md:text-2xl leading-relaxed text-gray-800 max-w-4xl mx-auto px-4">
+        We've had the privilege of working with a wide range of clients, from renowned international hotel groups to thriving local businesses. Our core expertise lies in transforming your brand's story into powerful visuals. We specialize in professional photography for food and products, as well as dynamic videos for brand campaigns and social media.
+      </p>
     </div>
+  </section>
 
+      <div>
+        <ContactForm />
+      </div>
     </div>
 
 
