@@ -7,14 +7,15 @@ const Navbar = ({user,setUser}) => {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
-    await axios.post("http://localhost:5000/api/auth/logout");
+    await axios.post("/api/auth/logout");
     setUser(null);
     navigate("/")
   }
 
   return (
-    <nav className='bg-gray-800 p-4 text-white flex justify-between items-center'>
-      <Link to="/" className="font-bold">SRM Auth</Link>
+    <nav className='bg-gray-800 p-4 text-white'>
+      <div className='max-6-xl mx-auto px-4 py-3 flex justify-between items-center'>
+        <Link to="/" className="font-bold">Social Republic Media</Link>
       
       <div>
         {user ? (
@@ -31,6 +32,7 @@ const Navbar = ({user,setUser}) => {
             </Link>
           </>
         )}
+      </div>
       </div>
     </nav>
   )
