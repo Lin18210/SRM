@@ -2,27 +2,27 @@ import React, { useState } from 'react'
 
 const slides = [
   {
-    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80',
-    title: 'Business Photography',
+    image: '../../assets/Drinks & Cocktail-20251112T095416Z-1-001/Drinks & Cocktail/alcohol_02.jpg',
+    title: 'Cocktail',
     description: 'Professional photography that captures the essence of your brand with stunning visual narratives.',
   },
   {
-    image: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&q=80',
+    image: '../../assets/Drinks & Cocktail-20251112T095416Z-1-001/Drinks & Cocktail/bear_01.jpg',
     title: 'Business Videography',
     description: 'Cinematic storytelling that brings your business vision to life through compelling video content.',
   },
   {
-    image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80',
+    image: '../../assets/Drinks & Cocktail-20251112T095416Z-1-001/Drinks & Cocktail/beverage_01.jpg',
     title: 'SEO-Friendly Visuals',
     description: 'Optimized visual content that enhances your online presence and drives organic traffic.',
   },
   {
-    image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80',
+    image: '../../assets/Drinks & Cocktail-20251112T095416Z-1-001/Drinks & Cocktail/bottle_01.jpg',
     title: 'Brand Strategy',
     description: 'Strategic visual planning that aligns with your business goals and brand identity.',
   },
   {
-    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80',
+    image: '../../assets/Drinks & Cocktail-20251112T095416Z-1-001/Drinks & Cocktail/cafe_01.jpg',
     title: 'Creative Direction',
     description: 'Expert creative guidance that brings unique perspectives to every project.',
   },
