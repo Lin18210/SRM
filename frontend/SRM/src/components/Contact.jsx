@@ -6,6 +6,7 @@ export default function ContactForm() {
     fullName: '',
     businessName: '',
     email: '',
+    countryCode: '+66',
     phone: '',
     date: '',
     services: [],
@@ -45,7 +46,7 @@ export default function ContactForm() {
           name: formData.fullName,
           business: formData.businessName,
           email: formData.email,
-          phone: formData.phone,
+          phone: `${formData.countryCode} ${formData.phone}`,
           date: formData.date,
           services: formData.services.join(', '),
           message: formData.customMessage,
@@ -61,6 +62,7 @@ export default function ContactForm() {
           businessName: '',
           email: '',
           phone: '',
+          countryCode: '+66',
           date: '',
           services: [],
           customMessage: ''
@@ -75,10 +77,10 @@ export default function ContactForm() {
     }
   };
 
-  return (
+return (
   <div className="min-h-screen bg-[#e8f0ff] flex items-center justify-center p-6">
     <div className="bg-white w-full max-w-3xl p-10 rounded-xl shadow-sm">
-      
+
       {/* Title */}
       <h2 className="text-3xl font-semibold text-blue-600 mb-8 text-center">
         Get In Touch
@@ -87,9 +89,10 @@ export default function ContactForm() {
       {/* Status Messages */}
       {status === "success" && (
         <div className="text-green-600 text-sm mb-4 text-center">
-          Submitting Success! Thanks for submitting!
+          Thanks for submitting!
         </div>
       )}
+
       {status === "error" && (
         <div className="text-red-600 text-sm mb-4 text-center">
           Something went wrong. Please try again.
@@ -98,8 +101,8 @@ export default function ContactForm() {
 
       {/* Form */}
       <div className="space-y-6">
-        
-        {/* Row 1 */}
+
+        {/* Row 1 — First/Business Name */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <input
             type="text"
@@ -120,8 +123,9 @@ export default function ContactForm() {
           />
         </div>
 
-        {/* Row 2 */}
+        {/* Row 2 — Email & Phone */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Email */}
           <input
             type="email"
             name="email"
@@ -131,24 +135,63 @@ export default function ContactForm() {
             className="w-full px-4 py-3 bg-[#e4e7ff] rounded-lg text-sm placeholder-gray-600 focus:outline-none"
           />
 
-          <input
-            type="tel"
-            name="phone"
-            placeholder="Phone"
-            value={formData.phone}
-            onChange={handleChange}
-            className="w-full px-4 py-3 bg-[#e4e7ff] rounded-lg text-sm placeholder-gray-600 focus:outline-none"
-          />
+          {/* Phone Input Group */}
+          <div className="grid grid-cols-3 gap-2">
+            <select
+              name="countryCode"
+              value={formData.countryCode}
+              onChange={handleChange}
+              className="col-span-1 px-4 py-3 bg-[#e4e7ff] rounded-lg text-sm focus:outline-none"
+            >
+              <option value="+66">TH +66</option>
+              <option value="+65">SG +65</option>
+              <option value="+60">MY +60</option>
+              <option value="+95">MM +95</option>
+              <option value="+1">US +1</option>
+              <option value="+44">GB +44</option>
+            </select>
+
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone"
+              value={formData.phone}
+              onChange={handleChange}
+              className="col-span-2 px-4 py-3 bg-[#e4e7ff] rounded-lg text-sm placeholder-gray-600 focus:outline-none"
+            />
+          </div>
         </div>
 
-        {/* Full width fields */}
+        {/* Date */}
         <input
           type="date"
           name="date"
           value={formData.date}
           onChange={handleChange}
-          className="w-full px-4 py-3 bg-[#e4e7ff] rounded-lg text-sm text-gray-700 focus:outline-none"
+          className="w-full px-4 py-3 bg-[#e4e7ff] rounded-lg text-sm focus:outline-none"
         />
+
+        {/* Services (checkboxes) */}
+        <div className="space-y-3">
+          <label className="text-sm text-gray-700 font-medium">Required Service</label>
+
+          {[
+            "Business Photography",
+            "Business Videography",
+            "Marketing",
+            "Customize your service"
+          ].map((service) => (
+            <label key={service} className="flex items-center gap-3 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={formData.services.includes(service)}
+                onChange={() => handleCheckbox(service)}
+                className="w-4 h-4"
+              />
+              <span className="text-sm">{service}</span>
+            </label>
+          ))}
+        </div>
 
         {/* Message */}
         <textarea
@@ -175,5 +218,6 @@ export default function ContactForm() {
     </div>
   </div>
 );
+
 
 }
