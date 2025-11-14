@@ -76,177 +76,104 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4">
-      <div className="max-w-4xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Left side - Form */}
-          <div className="bg-white p-8 rounded-lg">
-            <div className="space-y-6">
-              {status === 'success' && (
-                <div className="p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 shrink-0" />
-                  <p className="text-green-800 text-sm">Thank you! Your message has been sent successfully.</p>
-                </div>
-              )}
+  <div className="min-h-screen bg-[#e8f0ff] flex items-center justify-center p-6">
+    <div className="bg-white w-full max-w-3xl p-10 rounded-xl shadow-sm">
+      
+      {/* Title */}
+      <h2 className="text-3xl font-semibold text-blue-600 mb-8 text-center">
+        Get In Touch
+      </h2>
 
-              {status === 'error' && (
-                <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                  <p className="text-red-800 text-sm">Oops! Something went wrong. Please try again.</p>
-                </div>
-              )}
+      {/* Status Messages */}
+      {status === "success" && (
+        <div className="text-green-600 text-sm mb-4 text-center">
+          Submitting Success! Thanks for submitting!
+        </div>
+      )}
+      {status === "error" && (
+        <div className="text-red-600 text-sm mb-4 text-center">
+          Something went wrong. Please try again.
+        </div>
+      )}
 
-              <div>
-                <label className="block text-sm font-medium text-gray-800 mb-2">
-                  Name <span className="text-red-500">(required)</span>
-                </label>
-                <p className="text-xs text-gray-500 mb-2">Full Name</p>
-                <input
-                  type="text"
-                  name="fullName"
-                  value={formData.fullName}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-gray-400"
-                />
-              </div>
+      {/* Form */}
+      <div className="space-y-6">
+        
+        {/* Row 1 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input
+            type="text"
+            name="fullName"
+            placeholder="First Name"
+            value={formData.fullName}
+            onChange={handleChange}
+            className="w-full px-4 py-3 bg-[#e4e7ff] rounded-lg text-sm placeholder-gray-600 focus:outline-none"
+          />
 
-              <div>
-                <label className="block text-sm font-medium text-gray-800 mb-2">
-                  Business Name
-                </label>
-                <input
-                  type="text"
-                  name="businessName"
-                  value={formData.businessName}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-gray-400"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-800 mb-2">
-                  Email <span className="text-red-500">(required)</span>
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-gray-400"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-800 mb-2">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-gray-400"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-800 mb-2">
-                  Date
-                </label>
-                <input
-                  type="date"
-                  name="date"
-                  value={formData.date}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-gray-400"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-800 mb-3">
-                  Required Service
-                </label>
-                <div className="space-y-3">
-                  <label className="flex items-center gap-3 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={formData.services.includes('Business Photography')}
-                      onChange={() => handleCheckbox('Business Photography')}
-                      className="w-4 h-4 border-gray-300 rounded"
-                    />
-                    <span className="text-sm text-gray-700">Business Photography</span>
-                  </label>
-                  <label className="flex items-center gap-3 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={formData.services.includes('Business Videography')}
-                      onChange={() => handleCheckbox('Business Videography')}
-                      className="w-4 h-4 border-gray-300 rounded"
-                    />
-                    <span className="text-sm text-gray-700">Business Videography</span>
-                  </label>
-                  <label className="flex items-center gap-3 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={formData.services.includes('Marketing')}
-                      onChange={() => handleCheckbox('Marketing')}
-                      className="w-4 h-4 border-gray-300 rounded"
-                    />
-                    <span className="text-sm text-gray-700">Marketing</span>
-                  </label>
-                  <label className="flex items-center gap-3 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={formData.services.includes('Customize your service')}
-                      onChange={() => handleCheckbox('Customize your service')}
-                      className="w-4 h-4 border-gray-300 rounded"
-                    />
-                    <span className="text-sm text-gray-700">Customize your service.</span>
-                  </label>
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm text-gray-700 mb-2">
-                  Let's tailor our services to your brand to get the exact results you want.
-                </label>
-                <textarea
-                  name="customMessage"
-                  value={formData.customMessage}
-                  onChange={handleChange}
-                  rows="5"
-                  className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-gray-400 resize-none"
-                />
-              </div>
-
-              <button
-                onClick={handleSubmit}
-                disabled={loading}
-                className="px-8 py-3 bg-white border-2 border-black text-black font-medium rounded-full hover:bg-black hover:text-white transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {loading ? 'Sending...' : 'Submit'}
-              </button>
-            </div>
-          </div>
-
-          {/* Right side - Image */}
-          <div className="hidden md:block">
-            <div className="top-8">
-              <img
-                src="../../assets/Drinks & Cocktail-20251112T095416Z-1-001/Drinks & Cocktail/alcohol_01.jpg"
-                alt="Food Photography"
-                className="w-full h-full object-cover rounded-lg shadow-lg"
-              />
-            </div>
-          </div>
+          <input
+            type="text"
+            name="businessName"
+            placeholder="Last Name"
+            value={formData.businessName}
+            onChange={handleChange}
+            className="w-full px-4 py-3 bg-[#e4e7ff] rounded-lg text-sm placeholder-gray-600 focus:outline-none"
+          />
         </div>
 
-        <div className="mt-8 p-6 bg-blue-50 rounded-lg text-center text-sm text-gray-700">
-          <p className="font-semibold mb-2">Setup Instructions:</p>
-          <p>1. Sign up at <a href="https://web3forms.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">web3forms.com</a></p>
-          <p>2. Get your access key and replace 'YOUR_ACCESS_KEY_HERE' in the code</p>
-          <p>3. Your email will receive all form submissions</p>
+        {/* Row 2 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full px-4 py-3 bg-[#e4e7ff] rounded-lg text-sm placeholder-gray-600 focus:outline-none"
+          />
+
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Phone"
+            value={formData.phone}
+            onChange={handleChange}
+            className="w-full px-4 py-3 bg-[#e4e7ff] rounded-lg text-sm placeholder-gray-600 focus:outline-none"
+          />
         </div>
+
+        {/* Full width fields */}
+        <input
+          type="date"
+          name="date"
+          value={formData.date}
+          onChange={handleChange}
+          className="w-full px-4 py-3 bg-[#e4e7ff] rounded-lg text-sm text-gray-700 focus:outline-none"
+        />
+
+        {/* Message */}
+        <textarea
+          name="customMessage"
+          placeholder="Type your message here"
+          value={formData.customMessage}
+          onChange={handleChange}
+          rows="4"
+          className="w-full px-4 py-3 bg-[#cfd7ff] rounded-lg text-sm placeholder-gray-600 focus:outline-none resize-none"
+        />
+
+        {/* Submit Button */}
+        <div className="flex justify-center">
+          <button
+            onClick={handleSubmit}
+            disabled={loading}
+            className="px-10 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-lg shadow-sm transition disabled:opacity-50"
+          >
+            {loading ? "Sending..." : "Submit"}
+          </button>
+        </div>
+
       </div>
     </div>
-  );
+  </div>
+);
+
 }

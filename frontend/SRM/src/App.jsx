@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+import Gallery from "./pages/Gallery";
+import ContactPage from "./pages/ContactPage";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NotFound from "./components/NotFound";
@@ -42,6 +44,11 @@ function App() {
       <Navbar user={user} setUser={setUser} />
       <Routes>
         <Route path="/" element={<Home user={user} setError={error}/>}/>
+        <Route path="/gallery" element={<Gallery user={user} setError={error}/>}/>
+        <Route path="/services" element={<Home user={user} setError={error}/>}/>
+        <Route path="/blog" element={<Home user={user} setError={error}/>}/>
+        <Route path="/contact" element={<ContactPage user={user} setError={error}/>}/>
+        <Route path="/faq" element={<Home user={user} setError={error}/>}/>
         <Route path="/login" element={user ? <Navigate to="/"/> : <Login setUser={setUser}/>}/>
         <Route path="/register" element={user ? <Navigate to="/"/> :<Register setUser={setUser}/>}/>
         <Route path="*" element={<NotFound />}/>
