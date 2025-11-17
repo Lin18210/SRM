@@ -82,7 +82,7 @@ return (
     <div className="bg-white w-full max-w-3xl p-10 rounded-xl shadow-sm">
 
       {/* Title */}
-      <h2 className="text-3xl font-semibold text-blue-600 mb-8 text-center">
+      <h2 className="text-3xl font-semibold text-black mb-8 text-center">
         Get In Touch
       </h2>
 
@@ -173,7 +173,7 @@ return (
 
         {/* Services (checkboxes) */}
         <div className="space-y-3">
-          <label className="text-sm text-gray-700 font-medium">Required Service</label>
+          <label className="text-sm text-gray-700 font-medium">Required Service</label>/
 
           {[
             "Business Photography",

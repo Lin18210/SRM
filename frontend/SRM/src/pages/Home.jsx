@@ -4,6 +4,7 @@ import ImageSlider from '../components/ImageSlider'
 import ManualSlider from '../components/manualSlider'
 import ContactForm from '../components/Contact'
 import FlipCard from '../components/FlippingCard'
+import Footer from '../components/Footer'
 
 const Home = ({error, user}) => {
   return (
@@ -423,7 +424,14 @@ const Home = ({error, user}) => {
       <div>
         <ContactForm />
       </div>
+
+      {/* Footer Section */}
+      <div>
+        <Footer/>
+      </div>
     </div>
+
+    // 
   )
 }
 
