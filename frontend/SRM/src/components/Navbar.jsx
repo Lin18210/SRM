@@ -86,10 +86,37 @@ const Navbar = ({ user, setUser }) => {
                 </li>
 
                 {/* Other services */}
-                <li>
-                  <Link to="/services/Video" className="hover:text-yellow-400 block transition">
+                <li className="group/video relative">
+                  <div className="hover:text-yellow-400 cursor-pointer transition flex items-center justify-between">
                     Video Production
-                  </Link>
+                    <span className="text-xs ml-2"><FaArrowRight/></span>
+                  </div>
+                  
+                  {/* Nested submenu for Video Production - with bridge to prevent hover gap */}
+                  <div className="absolute left-full top-0 -ml-2 pt-0 hidden group-hover/video:block">
+                    {/* Invisible bridge to maintain hover */}
+                    <div className="absolute left-0 top-0 w-4 h-full"></div>
+                    
+                    <div className="bg-black bg-opacity-90 text-white p-4 rounded-lg shadow-xl w-56 ml-2">
+                      <ul className="space-y-2">
+                        <li>
+                          <Link to="/services/VideoCor" className="hover:text-yellow-400 block transition text-sm">
+                            Corporate & Brand Videography
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/services/VideoEvent" className="hover:text-yellow-400 block transition text-sm">
+                            Event Videography
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/services/VideoSocial" className="hover:text-yellow-400 block transition text-sm">
+                            Social Media Video Production
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </li>
 
                 <li>

@@ -17,7 +17,9 @@ import Product from "./services/Product";
 import Lifestyles from "./services/Lifestyles";
 import Food from "./services/Food";
 import Event from "./services/Event";
-import Video from "./services/Video";
+import VideoCor from "./services/VideoCor";
+import VideoEvent from "./services/VideoEvent";
+import VideoSocial from "./services/VideoSocial";
 import Social from "./services/Social";
 
 axios.defaults.withCredentials = true;
@@ -56,7 +58,9 @@ function App() {
         <Route path="/services/Lifestyles" element={<Lifestyles user={user} setError={error}/>}/>
         <Route path="/services/Food" element={<Food user={user} setError={error}/>}/>
         <Route path="/services/Event" element={<Event user={user} setError={error}/>}/>
-        <Route path="/services/Video" element={<Video user={user} setError={error}/>}/>
+        <Route path="/services/VideoCor" element={<VideoCor user={user} setError={error}/>}/>
+        <Route path="/services/VideoEvent" element={<VideoEvent user={user} setError={error}/>}/>
+        <Route path="/services/VideoSocial" element={<VideoSocial user={user} setError={error}/>}/>
         <Route path="/services/Social" element={<Social user={user} setError={error}/>}/>
         <Route path="/blog" element={<Home user={user} setError={error}/>}/>
         <Route path="/contact" element={<ContactPage user={user} setError={error}/>}/>
