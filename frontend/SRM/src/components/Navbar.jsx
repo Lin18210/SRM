@@ -30,11 +30,62 @@ const Navbar = ({ user, setUser }) => {
           </Link>
           
           {/* Navigation pages */}
-           <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center space-x-8 text-sm tracking-wider">
+            <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center space-x-8 text-sm tracking-wider">
               <Link to="/" className={linkStyles}>Home <span className={underlineStyles}></span></Link>
               <Link to="/gallery" className={linkStyles}>Gallery <span className={underlineStyles}></span></Link>
+              
+              {/* ===== SERVICES DROPDOWN ===== */}
+              <div className="relative group">
+                <button className={`${linkStyles} flex items-center`}>
+                  Services
+                  <span className={underlineStyles}></span>
+                </button>
+
+                {/* DROPDOWN WRAPPER - Added padding-top to bridge the gap */}
+                <div className="absolute left-0 pt-4 hidden group-hover:block">
+                  <div className="bg-black bg-opacity-90 text-white p-6 rounded-lg shadow-xl w-64">
+                    <ul className="space-y-3">
+                      <li>
+                        <Link to="/services/Product" className="hover:text-yellow-400 block transition">
+                          Product Photography
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link to="/services/Lifestyles" className="hover:text-yellow-400 block transition">
+                          Lifestyle & Interior Photography
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link to="/services/Food" className="hover:text-yellow-400 block transition">
+                          Food & Beverage Photography
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link to="/services/Event" className="hover:text-yellow-400 block transition">
+                          Event Photography
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link to="/services/Video" className="hover:text-yellow-400 block transition">
+                          Video Production
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link to="/services/Social" className="hover:text-yellow-400 block transition">
+                          Social Media Marketing
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
               <Link to="/blog" className={linkStyles}>Blog <span className={underlineStyles}></span></Link>
-              <Link to="/services" className={linkStyles}>Services <span className={underlineStyles}></span></Link>
               <Link to="/contact" className={linkStyles}>Contact <span className={underlineStyles}></span></Link>
               <Link to="/faq" className={linkStyles}>FAQ <span className={underlineStyles}></span></Link>
           </div>
