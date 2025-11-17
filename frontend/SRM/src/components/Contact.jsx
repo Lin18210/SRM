@@ -78,11 +78,11 @@ export default function ContactForm() {
   };
 
 return (
-  <div className="min-h-screen bg-[#e8f0ff] flex items-center justify-center p-6">
+  <div className="min-h-screen bg-[#fbf6ec] flex items-center justify-center p-6">
     <div className="bg-white w-full max-w-3xl p-10 rounded-xl shadow-sm">
 
       {/* Title */}
-      <h2 className="text-3xl font-semibold text-black mb-8 text-center">
+      <h2 className="text-3xl font-semibold text-yellow-500 mb-8 text-center">
         Get In Touch
       </h2>
 
@@ -110,7 +110,7 @@ return (
             placeholder="First Name"
             value={formData.fullName}
             onChange={handleChange}
-            className="w-full px-4 py-3 bg-[#e4e7ff] rounded-lg text-sm placeholder-gray-600 focus:outline-none"
+            className="w-full px-4 py-3 bg-[#f6e5c2] rounded-lg text-sm placeholder-gray-600 focus:outline-none"
           />
 
           <input
@@ -119,7 +119,7 @@ return (
             placeholder="Last Name"
             value={formData.businessName}
             onChange={handleChange}
-            className="w-full px-4 py-3 bg-[#e4e7ff] rounded-lg text-sm placeholder-gray-600 focus:outline-none"
+            className="w-full px-4 py-3 bg-[#f6e5c2] rounded-lg text-sm placeholder-gray-600 focus:outline-none"
           />
         </div>
 
@@ -132,7 +132,7 @@ return (
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-3 bg-[#e4e7ff] rounded-lg text-sm placeholder-gray-600 focus:outline-none"
+            className="w-full px-4 py-3 bg-[#f6e5c2] rounded-lg text-sm placeholder-gray-600 focus:outline-none"
           />
 
           {/* Phone Input Group */}
@@ -141,7 +141,7 @@ return (
               name="countryCode"
               value={formData.countryCode}
               onChange={handleChange}
-              className="col-span-1 px-4 py-3 bg-[#e4e7ff] rounded-lg text-sm focus:outline-none"
+              className="col-span-1 px-4 py-3 bg-[#f6e5c2] rounded-lg text-sm focus:outline-none"
             >
               <option value="+66">TH +66</option>
               <option value="+65">SG +65</option>
@@ -157,7 +157,7 @@ return (
               placeholder="Phone"
               value={formData.phone}
               onChange={handleChange}
-              className="col-span-2 px-4 py-3 bg-[#e4e7ff] rounded-lg text-sm placeholder-gray-600 focus:outline-none"
+              className="col-span-2 px-4 py-3 bg-[#f6e5c2] rounded-lg text-sm placeholder-gray-600 focus:outline-none"
             />
           </div>
         </div>
@@ -168,7 +168,7 @@ return (
           name="date"
           value={formData.date}
           onChange={handleChange}
-          className="w-full px-4 py-3 bg-[#e4e7ff] rounded-lg text-sm focus:outline-none"
+          className="w-full px-4 py-3 bg-[#f6e5c2] rounded-lg text-sm focus:outline-none"
         />
 
         {/* Services (checkboxes) */}
@@ -200,7 +200,7 @@ return (
           value={formData.customMessage}
           onChange={handleChange}
           rows="4"
-          className="w-full px-4 py-3 bg-[#cfd7ff] rounded-lg text-sm placeholder-gray-600 focus:outline-none resize-none"
+          className="w-full px-4 py-3 bg-[#f6e5c2] rounded-lg text-sm placeholder-gray-600 focus:outline-none resize-none"
         />
 
         {/* Submit Button */}
@@ -208,7 +208,7 @@ return (
           <button
             onClick={handleSubmit}
             disabled={loading}
-            className="px-10 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-lg shadow-sm transition disabled:opacity-50"
+            className="px-10 py-3 bg-yellow-600 hover:bg-yellow-700 text-white rounded-full text-lg shadow-sm transition disabled:opacity-50"
           >
             {loading ? "Sending..." : "Submit"}
           </button>
