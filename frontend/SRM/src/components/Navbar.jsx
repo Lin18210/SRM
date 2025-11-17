@@ -27,7 +27,7 @@ const Navbar = ({ user, setUser }) => {
           
           {/* Logo - Styled to match the branding */}
           <Link to="/" className="text-2xl font-serif text-yellow-500 hover:text-yellow-400 transition-colors">
-            Social Republic Media
+            <img src="../assets/Logo/Copy of Logo Social Republic media .png" alt="Logo of Social Republic Media" className="h-45 w-auto"/>
           </Link>
           
           {/* Navigation pages */}
@@ -47,7 +47,7 @@ const Navbar = ({ user, setUser }) => {
                 <div className="bg-black bg-opacity-90 text-white p-6 rounded-lg shadow-xl w-64">
                   <ul className="space-y-3">
                     {/* Photography with nested submenu */}
-                    <li className="group/photo relative">
+                    <li className="group/photo relative pb-2 border-b border-gray-700 last:border-b-0">
                       <div className="hover:text-yellow-400 cursor-pointer transition flex items-center justify-between">
                         Photography
                         <span className="text-xs ml-2"><FaArrowRight/></span>
@@ -59,34 +59,34 @@ const Navbar = ({ user, setUser }) => {
                     <div className="absolute left-0 top-0 w-4 h-full"></div>
                     
                     <div className="bg-black bg-opacity-90 text-white p-4 rounded-lg shadow-xl w-56 ml-2">
-                      <ul className="space-y-2">
-                        <li>
-                          <Link to="/services/Product" className="hover:text-yellow-400 block transition text-sm">
-                            Product Photography
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="/services/Lifestyles" className="hover:text-yellow-400 block transition text-sm">
-                            Lifestyle & Interior Photography
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="/services/Food" className="hover:text-yellow-400 block transition text-sm">
-                            Food & Beverage Photography
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="/services/Event" className="hover:text-yellow-400 block transition text-sm">
-                            Event Photography
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
+                        <ul className="space-y-0">
+                          <li className="py-2 border-b border-gray-700 last:border-b-0">
+                            <Link to="/services/Product" className="hover:text-yellow-400 block transition text-sm">
+                              Product Photography
+                            </Link>
+                          </li>
+                          <li className="py-2 border-b border-gray-700 last:border-b-0">
+                            <Link to="/services/Lifestyles" className="hover:text-yellow-400 block transition text-sm">
+                              Lifestyle & Interior Photography
+                            </Link>
+                          </li>
+                          <li className="py-2 border-b border-gray-700 last:border-b-0">
+                            <Link to="/services/Food" className="hover:text-yellow-400 block transition text-sm">
+                              Food & Beverage Photography
+                            </Link>
+                          </li>
+                          <li className="py-2 last:border-b-0">
+                            <Link to="/services/Event" className="hover:text-yellow-400 block transition text-sm">
+                              Event Photography
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
                   </div>
                 </li>
 
                 {/* Other services */}
-                <li className="group/video relative">
+                <li className="group/video relative pb-2 border-b border-gray-700 last:border-b-0">
                   <div className="hover:text-yellow-400 cursor-pointer transition flex items-center justify-between">
                     Video Production
                     <span className="text-xs ml-2"><FaArrowRight/></span>
@@ -98,18 +98,18 @@ const Navbar = ({ user, setUser }) => {
                     <div className="absolute left-0 top-0 w-4 h-full"></div>
                     
                     <div className="bg-black bg-opacity-90 text-white p-4 rounded-lg shadow-xl w-56 ml-2">
-                      <ul className="space-y-2">
-                        <li>
+                      <ul className="space-y-0">
+                        <li className="py-2 border-b border-gray-700 last:border-b-0">
                           <Link to="/services/VideoCor" className="hover:text-yellow-400 block transition text-sm">
                             Corporate & Brand Videography
                           </Link>
                         </li>
-                        <li>
+                        <li className="py-2 border-b border-gray-700 last:border-b-0">
                           <Link to="/services/VideoEvent" className="hover:text-yellow-400 block transition text-sm">
                             Event Videography
                           </Link>
                         </li>
-                        <li>
+                        <li className="py-2 last:border-b-0">
                           <Link to="/services/VideoSocial" className="hover:text-yellow-400 block transition text-sm">
                             Social Media Video Production
                           </Link>
@@ -119,7 +119,7 @@ const Navbar = ({ user, setUser }) => {
                   </div>
                 </li>
 
-                <li>
+                <li className="py-2 border-b border-gray-700/30 last:border-b-0">
                   <Link to="/services/Social" className="hover:text-yellow-400 block transition">
                     Social Media Marketing
                   </Link>
