@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import ImageSlider from '../components/ImageSlider'
 import ManualSlider from '../components/manualSlider'
 import ContactForm from '../components/Contact'
+import FlipCard from '../components/FlippingCard'
 
 const Home = ({error, user}) => {
   return (
@@ -90,43 +91,55 @@ const Home = ({error, user}) => {
           <h2 className="text-5xl font-serif text-white tracking-wider mb-2">
             Services
           </h2>
-
-          {/* Will Add later------------------------------------------------------------ */}
-          <p className="text-lg text-yellow-500 hover:text-yellow-400 cursor-pointer">
-            View Packages
-          </p>
         </div>
 
         {/* 2. Two-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
           {/* LEFT COLUMN: Business Photography */}
           <div className="flex flex-col items-center">
-            <div className="w-full h-120 overflow-hidden bg-gray-900 border-b border-yellow-500">
-              <img 
-                src="../../assets/Food-20251113T081516Z-1-001/Food/beef_01.jpg"
-                alt="Business Photography"
-                className="w-full h-full object-cover transition duration-300 hover:scale-105"
+            <div className="w-lg h-120 overflow-hidden bg-gray-900 border-b border-yellow-500 rounded-xl">
+              <FlipCard
+                image="../../assets/Food-20251113T081516Z-1-001/Food/beef_01.jpg"
+                title={"Product Photography"}
+                details={`• 40–50 premium images
+                          • 5 lifestyle shots
+                          • Advanced retouching
+                          • Creative compositions
+                          • Add-ons available`}
               />
             </div>
             {/* Label */}
             <h3 className="text-white text-xl uppercase tracking-widest mt-4">
-              Business Photography
+              Product Photography
+            </h3>
+          </div>
+
+          {/* Middle COLUMN: Business Photography */}
+          <div className="flex flex-col items-center">
+            <div className="w-lg h-120 overflow-hidden bg-gray-900 border-b border-yellow-500 rounded-xl">
+              <FlipCard
+                image="../../assets/Restaurant-20251113T081548Z-1-001/Restaurant/architecture_01.jpg"
+                details="We offer professional business, food, and product photography with studio lighting and high-quality retouching."
+              />
+            </div>
+            {/* Label */}
+            <h3 className="text-white text-xl uppercase tracking-widest mt-4">
+              Lifestyle & Interior Photography
             </h3>
           </div>
 
           {/* RIGHT COLUMN: Business Videography */}
           <div className="flex flex-col items-center">
-            <div className="w-full h-120 overflow-hidden bg-gray-900 border-b border-yellow-500">
-              <img 
-                src="../../assets/Food-20251113T081516Z-1-001/Food/beans_01.jpg" 
-                alt="Business Videography"
-                className="w-full h-full object-cover transition duration-300 hover:scale-105"
+            <div className="w-lg h-120 overflow-hidden bg-gray-900 border-b border-yellow-500 rounded-xl">
+              <FlipCard
+                image="../../assets/Drinks & Cocktail-20251112T095416Z-1-001/Drinks & Cocktail/beverage_01.jpg"
+                details="We offer professional business, food, and product photography with studio lighting and high-quality retouching."
               />
             </div>
             {/* Label */}
             <h3 className="text-white text-xl uppercase tracking-widest mt-4">
-              Business Videography
+              Food & Beverage Photography
             </h3>
           </div>
 
@@ -411,9 +424,6 @@ const Home = ({error, user}) => {
         <ContactForm />
       </div>
     </div>
-
-
-
   )
 }
 

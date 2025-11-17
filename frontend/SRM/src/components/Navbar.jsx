@@ -43,47 +43,63 @@ const Navbar = ({ user, setUser }) => {
 
                 {/* DROPDOWN WRAPPER - Added padding-top to bridge the gap */}
                 <div className="absolute left-0 pt-4 hidden group-hover:block">
-                  <div className="bg-black bg-opacity-90 text-white p-6 rounded-lg shadow-xl w-64">
-                    <ul className="space-y-3">
-                      <li>
-                        <Link to="/services/Product" className="hover:text-yellow-400 block transition">
-                          Product Photography
-                        </Link>
-                      </li>
+  <div className="bg-black bg-opacity-90 text-white p-6 rounded-lg shadow-xl w-64">
+    <ul className="space-y-3">
+      {/* Photography with nested submenu */}
+      <li className="group/photo relative">
+        <div className="hover:text-yellow-400 cursor-pointer transition flex items-center justify-between">
+          Photography
+          <span className="text-xs ml-2"></span>
+        </div>
+        
+        {/* Nested submenu for Photography - with bridge to prevent hover gap */}
+        <div className="absolute left-full top-0 -ml-2 pt-0 hidden group-hover/photo:block">
+          {/* Invisible bridge to maintain hover */}
+          <div className="absolute left-0 top-0 w-4 h-full"></div>
+          
+          <div className="bg-black bg-opacity-90 text-white p-4 rounded-lg shadow-xl w-56 ml-2">
+            <ul className="space-y-2">
+              <li>
+                <Link to="/services/Product" className="hover:text-yellow-400 block transition text-sm">
+                  Product Photography
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/Lifestyles" className="hover:text-yellow-400 block transition text-sm">
+                  Lifestyle & Interior Photography
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/Food" className="hover:text-yellow-400 block transition text-sm">
+                  Food & Beverage Photography
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/Event" className="hover:text-yellow-400 block transition text-sm">
+                  Event Photography
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
 
-                      <li>
-                        <Link to="/services/Lifestyles" className="hover:text-yellow-400 block transition">
-                          Lifestyle & Interior Photography
-                        </Link>
-                      </li>
+                {/* Other services */}
+                <li>
+                  <Link to="/services/Video" className="hover:text-yellow-400 block transition">
+                    Video Production
+                  </Link>
+                </li>
 
-                      <li>
-                        <Link to="/services/Food" className="hover:text-yellow-400 block transition">
-                          Food & Beverage Photography
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link to="/services/Event" className="hover:text-yellow-400 block transition">
-                          Event Photography
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link to="/services/Video" className="hover:text-yellow-400 block transition">
-                          Video Production
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link to="/services/Social" className="hover:text-yellow-400 block transition">
-                          Social Media Marketing
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+                <li>
+                  <Link to="/services/Social" className="hover:text-yellow-400 block transition">
+                    Social Media Marketing
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
               <Link to="/blog" className={linkStyles}>Blog <span className={underlineStyles}></span></Link>
               <Link to="/contact" className={linkStyles}>Contact <span className={underlineStyles}></span></Link>
